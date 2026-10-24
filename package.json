@@ -1,0 +1,41 @@
+{
+  "name": "soonertogether",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/logic.test.ts tests/cloud.test.ts",
+    "check": "npm run test && npm run test:db && npm run typecheck && npm run lint && npm run build",
+    "test:db": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/db/security.test.ts",
+    "db:migrate": "node scripts/migrate.mjs",
+    "env:check": "node scripts/check-env.mjs"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.118.0",
+    "lucide-react": "^1.61.0",
+    "next": "16.4.3",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.11",
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.3",
+    "pg": "^8.23.1",
+    "supabase": "^2.122.0",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vercel": "^65.2.0"
+  }
+}
