@@ -1,9 +1,0 @@
-# Never upload secrets, local tooling or tests to Vercel.
-.env*
-!.env.example
-.claude
-.next
-node_modules
-tests
-*.log
-tsconfig.tsbuildinfo
